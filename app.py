@@ -9,6 +9,10 @@ import math
 pipe = pickle.load(open('pipe.pkl', 'rb'))
 df = pickle.load(open('df.pkl', 'rb'))
 
+# Setting tab title
+st.set_page_config(page_title="Laptop Price Predictor")
+
+# Setting application title
 st.title("Laptop Price Predictor")
 
 # Brand
@@ -21,7 +25,7 @@ type = st.selectbox('Type', df['TypeName'].unique())
 ram = st.selectbox('RAM(in GB)', [2, 4, 6, 8, 12, 16, 24, 32, 64])
 
 # Weight
-weight = st.number_input('Weight of the Laptop')
+weight = st.number_input('Weight of the Laptop', value = 1.5)
 
 # Touchscreen
 touchscreen = st.selectbox('Touchscreen', ['No', 'Yes'])
@@ -30,7 +34,7 @@ touchscreen = st.selectbox('Touchscreen', ['No', 'Yes'])
 ips = st.selectbox('IPS', ['No', 'Yes'])
 
 # Screen Size
-screen_size = st.number_input('Screen Size')
+screen_size = st.number_input('Screen Size', value = 14.0)
 
 # Resolution
 resolution = st.selectbox('Screen Resolution', ['1920x1080', '1366x768', 
